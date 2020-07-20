@@ -19,9 +19,9 @@ class Register extends Component {
 
                     <form>
                     <input type="text" id="login" class="fadeIn second" name="login" placeholder="UserName" />
-                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" />
-                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="Type Password" />
-                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="Type Password Again" />
+                    <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email" />
+                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="Type Password" />
+                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="Type Password Again" />
 
 
                     <input type="submit" class="fadeIn fourth" value="Register" />
