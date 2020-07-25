@@ -1,0 +1,19 @@
+.row{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 22%;
+}
+
+.edit-btn{
+    width:15%;
+    background-color: #0ab6ff;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.card{
+    margin-top:3%;
+    margin-left: 0%;
+}
+
