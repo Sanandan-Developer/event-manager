@@ -31,7 +31,7 @@ class Contacts extends Component {
                     <div class="fcf-form-group">
                         <label for="Email" class="fcf-label">Your email address</label>
                         <div class="fcf-input-group">
-                            <input type="email" id="Email" name="Email" class="fcf-form-control" required/>
+                            <input type="Name" id="mail" name="Email" class="fcf-form-control" required/>
                         </div>
                     </div>
 

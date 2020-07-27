@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
-import ModalContent from './modal.js'
-import { black } from 'material-ui/styles/colors';
+import React, { Component, useState, useEffect } from 'react';
 import TextModal from './textmodal.js'
+import axios from 'axios'
+import data from './details'
 
-class Events extends Component {
-    render() { 
+function Events(){
 
-        var elements = ['one', 'two', 'three', 'four']
+    const [Events, setEvents] = useState([]);
 
-        var items = []
+    useEffect(()=>{
+        const fetchdata = async() => {
+            const {data} = await axios.get("/User")
+            setEvents(data)
+        }
+        fetchdata()
+        return ()=>{
 
+        }
+    }, [])
+    
+    {/*
         for( var [index, value] of elements.entries()){
             items.push(
                 <div class="card text-white bg-dark mb-3" id={index} style={{width:"18em", margin:"10px"}}>
@@ -26,40 +35,34 @@ class Events extends Component {
                 </div>
             )
         }
+    
+    */}
+        const events = data.Events
         
-        const events = ['first', 'second', 'third', 'fourth']
 
         const events_details = []
-        
+
         for( const [index, values] of events.entries()){
             events_details.push(
                 <div class="card text-white bg-dark mb-3 m-2" style={{width: "18rem"}}>
                 <div class="card-body">
-                    <h5 class="card-title" style={{fontWeight:"bold", textTransform:"uppercase"}}>{values}</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <TextModal />
+                    <h5 class="card-title" style={{fontWeight:"bold", textTransform:"uppercase"}}>{values.title}</h5>
+                    <p class="card-text">{values.description}</p>
+                    <TextModal event={values}/>
                 </div>
                 </div>
             )
-        }
+        } 
+    
         
-
+    
         
         return (  
         <div>
-            <div >
-            <h1 style={{fontWeight:"bold", marginLeft:"23%"}}>Events Created</h1>
-                <div class="row">
-                    {items}
-                </div>
-                <center>
-                    <button type="button" class="btn btn-primary btn-lg" onClick={()=> elements.push('five')}>Create New Event</button>
-                </center>
-            </div>
 
             <div style={{marginTop:"5%"}}>
-                <h1 style={{fontWeight:"bold", marginLeft:"23%"}}>Events Registered In</h1>
-                <div class="row">
+                <h1 style={{fontWeight:"bold", marginLeft:"2%"}}>Events Registered In</h1>
+                <div class="d-flex justify-content-center flex-wrap">
                     {events_details}
                 </div>
             </div>
@@ -68,7 +71,7 @@ class Events extends Component {
             </center>
         </div>
           );
-    }
+    
 }
  
 export default Events;

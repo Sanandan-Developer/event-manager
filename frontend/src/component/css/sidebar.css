@@ -1,9 +1,5 @@
 
 @media only screen and (max-width: 368px) {
-    .sidebar-options span{
-        display: none;
-    }
-
     .left_area_sidebar h3{
         font-size: 2px;
     }
@@ -11,9 +7,6 @@
 }
 
 @media only screen and (max-width: 468px) {
-    .sidebar-options span{
-        display: none;
-    }
 
     .left_area_sidebar h3{
         font-size: 12px;
@@ -22,10 +15,44 @@
 }
 
 
+.sidebar-close-btn {
+    position: absolute;
+    right: .5rem;
+    font-size: 1.5rem;
+    width: 2.2rem;
+    color: #fff;
+    background: local;
+    border: none;
+}
+
+
+.sidebar-open-btn {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    border: none;
+    padding: .5rem;
+    background-color: #2F323A;
+    background: local;
+    color:#fff;
+}
+
+.sidebar-open-btn:hover {
+    font-size: 1.6rem;
+    width: 2.6rem;
+    border: none;
+    padding: .5rem;
+    background-color: #2F323A;
+    background: local;
+    color:#fff;
+
+}
+
+
 .sidebar-main{
     display: block;
     margin-top: 0;
     height: 100%;
+    width: 100%;
 }
 
 
@@ -90,10 +117,17 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 20%;
+    transition: all 1s;
+    transform: translateX(-21rem);
+    width: 21rem;
     height: 100%;
     overflow-x: hidden;
 }
+
+.sidebar.open{
+    transform: translateX(0rem);
+}
+
 
 .sidebar .profile-image{
     position: relative;
@@ -155,7 +189,7 @@
 }
 
 
-.sidebar h4:hover{
+.sidebar h4{
     font-size: 25px;
     font-weight: bold;
     color: #1DC4E7

@@ -12,15 +12,6 @@ Modal.setAppElement('#root')
 
 class Dashboard extends Component {
     state = {
-        data: {
-            label : ["1", "2", "3", "4", "5"],
-            datasets: [
-                {
-                    label: "Site Visited",
-                    backgroundColor : "red"
-                }
-            ] 
-        },
         show: false,
         showModal : () => {
             console.log(this)
@@ -32,7 +23,7 @@ class Dashboard extends Component {
     }
     
     render() {
-
+        {/*
         const events = ['first', 'second', 'third', 'fourth']
 
         const events_details = []
@@ -49,12 +40,14 @@ class Dashboard extends Component {
             )
         }
 
+    */}
+
 
         return (
             <div>
                 {/* Intro Block */}
                 <div class="row align-items-center">
-                    <div class="col-4">
+                    <div class="col">
                     <div class="card" style={{width:"400px"}}>
                         <img class="card-img-top" src = {img8} alt="Card image"/>
                         <div class="card-body">
@@ -91,25 +84,8 @@ class Dashboard extends Component {
                     
                     {/* Block Ends */}
 
-                    {/* Graph */}
-                    {/*
-                    <div class="col-8" style={{paddingTop:"4%"}}>
-                        <h1>Work Done</h1>
-                    <Line options={{responsive:"true", width: 600, height: 500}}>
-                        data = {this.state.data}
-                    </Line>
-                    </div>
-                    */}
                 </div>
-                    
-
-
-
-            
-            <div class="row">
-                {events_details}
                 
-            </div>
 
             </div>
         );

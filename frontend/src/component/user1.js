@@ -6,9 +6,7 @@ import {Link} from 'react-router-dom'
 import Dashboard from './user/dashboard.js'
 import Events from './user/events.js'
 import Terms from './user/terms.js'
-
-
-
+import UserHeader from './user_header'
 
 class User1 extends Component {
 
@@ -29,19 +27,24 @@ class User1 extends Component {
         }
 
     }
+
+    openMenu = () => {
+        document.querySelector('.sidebar').classList.add('open')
+    }
+
+    closeMenu = () => {
+        document.querySelector('.sidebar').classList.remove('open')
+    }
     
     render() { 
         return (
             <div  className="sidebar-main" >
                 {/* HeaderIn Block */}
-                
+                <UserHeader open={this.openMenu}/>
 
                 {/*Block Ends */}
                 <div className="sidebar">
-                        <center className="left_area_sidebar">
-                            <h3>Event</h3>
-                            <h3><span>Organiser</span></h3>
-                        </center>  
+                <button style={{marginRight:".5rem"}} class="sidebar-close-btn" onClick={this.closeMenu}><i class="fa fa-times" aria-hidden="true"></i></button> 
                     <center>
                         <img src={img8} className="profile-image"  alt=""/>
                         <h4>John Doe</h4>

@@ -6,7 +6,7 @@ import img6 from './imgs/img6.jpg'
 
 class About extends Component {
     render() { 
-        return ( 
+        return  (
         <div>
             {/*First */}
             <div class="w3-row w3-padding-64" style={{backgroundColor:"#e6ffff"}}>
@@ -15,7 +15,7 @@ class About extends Component {
             </div>
 
             <div class="w3-col m6 w3-padding-large">
-            <h1 class="w3-center"><strong  style={{fontSize:"80px"}}>About</strong></h1><br/>
+            <h1 class="w3-center"><strong  style={{fontSize:"7vw"}}><span>About</span></strong></h1><br/>
             <h3 class="w3-center"></h3>
             
             </div>

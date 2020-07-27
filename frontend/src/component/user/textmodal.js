@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
-
 const modalStyle = {
     overlay:{
         backgroundColor:"grey"
@@ -16,8 +15,10 @@ const modalStyle = {
 
 Modal.setAppElement('#root')        
 
-export default function TextModal(){
+export default function TextModal(props){
     const [modalIsOpen, setModalIsOpen] = React.useState(false)
+    var event = props.event
+    console.log(event, "chetan")
     return (
         <div>
             <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" style={{float:"right"}}>
@@ -26,10 +27,10 @@ export default function TextModal(){
             <Modal isOpen={modalIsOpen} style={modalStyle} onRequestClose={()=> setModalIsOpen(false)}>
                 <div class="card" style={{width: "100%", height:"100%"}}>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Form link</a>
+                <h5 class="card-title">{event.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Event Date:{event.date} </h6>
+                    <p class="card-text">{event.details}</p>
+                    <a href="#" class="card-link">{event.link}</a>
                 </div>
                 </div>
             </Modal>
