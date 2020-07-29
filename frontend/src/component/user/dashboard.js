@@ -23,26 +23,6 @@ class Dashboard extends Component {
     }
     
     render() {
-        {/*
-        const events = ['first', 'second', 'third', 'fourth']
-
-        const events_details = []
-        
-        for( const [index, values] of events.entries()){
-            events_details.push(
-                <div class="card text-white bg-dark mb-3 m-2" style={{width: "18rem"}}>
-                <div class="card-body">
-                    <h5 class="card-title" style={{fontWeight:"bold", textTransform:"uppercase"}}>{values}</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <TextModal />
-                </div>
-                </div>
-            )
-        }
-
-    */}
-
-
         return (
             <div>
                 {/* Intro Block */}

@@ -15,7 +15,6 @@ class User1 extends Component {
     }
 
     renderPage = () => {
-        console.log(this.state.count)
         if (this.state.count === 0){
             return <Dashboard />
         }

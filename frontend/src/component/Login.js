@@ -2,11 +2,35 @@ import React, { Component } from 'react';
 import './css/sign.css'
 import Header from './header.js'
 import logo1 from './imgs/logo1.png'
-import { Link } from 'react-router-dom';
+import axios from 'axios'
+import { useHistory } from "react-router-dom";
+const querystring = require('querystring');
 
-class LogIn extends Component {
-    render() { 
 
+function LogIn(){
+
+    const history = useHistory()
+
+    function login(e){
+        e.preventDefault()
+        //console.log(document.getElementById('user_login').value)
+        var request = {
+            email: document.getElementById('user_login').value,
+            password: document.getElementById('user_password').value
+        }
+        axios.post('http://localhost:3000/login', querystring.stringify(request))
+        .then(resp =>{
+            if(resp.data.message === "Logged In Successful"){
+                history.push("/User")
+            }
+            //console.log(resp)
+            alert(resp.data.message)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+        
         return (
             <div>
                 <Header />
@@ -18,10 +42,10 @@ class LogIn extends Component {
                     </div>
 
 
-                    <form>
-                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" />
-                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" />
-                    <Link to="/User"><input type="submit" class="fadeIn fourth" value="Log In" /></Link>
+                    <form onSubmit={e=> login(e)}>
+                    <input type="text" id="user_login" class="fadeIn second" name="login" placeholder="login" />
+                    <input type="password" id="user_password" class="fadeIn third" name="login" placeholder="password" />
+                    <input type="submit" class="fadeIn fourth" value="Log In" />
                     </form>
 
  
@@ -34,7 +58,10 @@ class LogIn extends Component {
 
             </div>
         );
-    }
 }
+
+
+
+
  
 export default LogIn;

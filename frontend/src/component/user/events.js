@@ -1,48 +1,30 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, useEffect, useReducer } from 'react';
 import TextModal from './textmodal.js'
 import axios from 'axios'
 import data from './details'
 
 function Events(){
 
-    const [Events, setEvents] = useState([]);
+    const [UserEvents, setUserEvent] = useState([]);
 
-    useEffect(()=>{
-        const fetchdata = async() => {
-            const {data} = await axios.get("/User")
-            setEvents(data)
-        }
-        fetchdata()
-        return ()=>{
 
-        }
-    }, [])
+    const fetchdata = async() => {
+        const data1 = await axios.get("/User")
+        //console.log(data1.data)
+        setUserEvent(data1.data)
+    }
+
+    useEffect(() => {
+        fetchdata();
+            return ()=>{
+                //
+            }
+        }, [])
     
-    {/*
-        for( var [index, value] of elements.entries()){
-            items.push(
-                <div class="card text-white bg-dark mb-3" id={index} style={{width:"18em", margin:"10px"}}>
-                    <div class="card-header">
-                        Header
-                        <ModalContent />
-                    </div>
-                    <div class="card-body">
-                        <img class="card-img" />
-                        <h5 class="card-title">Dark card title</h5>
-                        <p class="card-text"></p>
-                        <button type="button" class="btn btn-primary">Publish</button>
-                    </div>
-                </div>
-            )
-        }
-    
-    */}
-        const events = data.Events
-        
-
+        const user_events = UserEvents
         const events_details = []
 
-        for( const [index, values] of events.entries()){
+        for( const [index, values] of user_events.entries()){
             events_details.push(
                 <div class="card text-white bg-dark mb-3 m-2" style={{width: "18rem"}}>
                 <div class="card-body">
