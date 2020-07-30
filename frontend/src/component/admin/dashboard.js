@@ -22,15 +22,15 @@ function Dashboard(){
 
 
         return (
-            <div>
+            <div style={{margin:"1rem", height:"100%"}}>
                 {/* Intro Block */}
-                <div class="d-flex flex-row bd-highlight mb-2">
+                <div class="d-flex flex-wrap" style={{backgroundColor:"#d4fafc", padding:"1rem"}}>
                     <div class="col-4">
                         <div class="card">
                             <img class="card-img-top" src = {img8} alt="Card image"/>
                             <div class="card-body">
-                                <h4 class="card-title"><span>John Doe</span></h4>
-                                <p class="card-text">@gmail.com</p>
+                                <h4 class="card-title"><span style={{color:"#1DC4E7", fontWeight:"bold", fontSize:"3vw"}}>John Doe</span></h4>
+                                <p class="card-text" style={{fontSize:"1.5vw"}}>@gmail.com</p>
                                 <button href="#" onClick={state.showModal} class="btn btn-primary">Edit</button>
                                 <Modal isOpen={state.show} onRequestClose={state.hideModal} style={{
                                     overlay:{
