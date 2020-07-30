@@ -4,14 +4,17 @@ import TextModal from './textmodal.js'
 import data from './details.js'
 
 function Events() {
-        const [elements, setelements] = useState(['first', 'second', 'third', 'four'])
+        var initialelement = []
+        data.Events.forEach(element => {
+            initialelement.push(element.title)
+        })
+        const [elements, setelements] = useState(initialelement)
         var items = []
-        console.log(elements)
         for(var [index, value] of elements.entries()){
             items.push(
-                <div class="card text-white bg-dark mb-3" id={index} style={{width:"18em", margin:"10px"}}>
+                <div class="card text-white bg-dark mb-3" id={index} style={{width:"18rem", margin:"10px"}}>
                     <div class="card-header">
-                    <h3 style={{fontWeight:"bold", textTransform:"uppercase", fontSize:"1.2vw"}}>{value}</h3>
+                    <h3 style={{fontWeight:"bold", textTransform:"uppercase", fontSize:"1.2rem"}}>{value}</h3>
                         <ModalContent />
                     </div>
                     <div class="card-body">
@@ -23,7 +26,6 @@ function Events() {
                 </div>
             )
         }
-        console.log(items)
 
 
         const addItems = () =>{
@@ -32,12 +34,12 @@ function Events() {
 
         return (  
         <div>
-            <div>
-            <h1 style={{fontWeight:"bold", marginLeft:"2%"}}>Events Created</h1>
-                <div class="d-flex justify-content-center flex-wrap">
+            <div style={{margin:"2rem"}}>
+                <h1 style={{fontWeight:"bold",textTransform:"uppercase" ,marginLeft:"2%", marginBottom:"3rem", cursor:"pointer"}}>Events Created</h1>
+                <div class="d-flex justify-content-center flex-wrap" style={{backgroundColor:"#b0dfff", padding:"4rem", borderRadius:"2rem"}}>
                     {items}
                 </div>
-                <center>
+                <center style={{margin:"4rem"}}>
                     <button type="button" class="btn btn-primary btn-lg" onClick={() => addItems() }>Create New Event</button>
                 </center>
             </div>
