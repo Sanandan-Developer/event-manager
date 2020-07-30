@@ -24,11 +24,11 @@ class Dashboard extends Component {
     
     render() {
         return (
-            <div>
+            <div style={{margin:"2rem"}}>
                 {/* Intro Block */}
-                <div class="row align-items-center">
+                <div class="row" style={{margin:"2rem", backgroundColor:"#1dc4e7", padding:"2rem"}}>
                     <div class="col">
-                    <div class="card" style={{width:"400px"}}>
+                    <div class="card" style={{width:"30vw"}}>
                         <img class="card-img-top" src = {img8} alt="Card image"/>
                         <div class="card-body">
                             <h4 class="card-title">John Doe</h4>
@@ -61,8 +61,8 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                    
-                    {/* Block Ends */}
+                {/* Block Ends */}
+                
 
                 </div>
                 
