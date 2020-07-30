@@ -42,9 +42,9 @@ function Events(){
         return (  
         <div>
 
-            <div style={{marginTop:"5%"}}>
-                <h1 style={{fontWeight:"bold", marginLeft:"2%"}}>Events Registered In</h1>
-                <div class="d-flex justify-content-center flex-wrap">
+            <div style={{margin:"5%"}}>
+                <h1 style={{fontWeight:"bold",textTransform:"uppercase", marginLeft:"2%", marginBottom:"2rem"}}>Events Registered In</h1>
+                <div class="d-flex justify-content-center flex-wrap" style={{backgroundColor:"#b0dfff", padding:"4rem", borderRadius:"2rem"}}>
                     {events_details}
                 </div>
             </div>
