@@ -11,26 +11,27 @@ var users = [
     },
 ];
 
-userslogin.find({'email':'chetanpandey1266@gmail.com'}, (err, docs)=>{
-    console.log(docs, err)      
+userslogin.find((err, data )=>{
+  console.log(err)
+  console.log(data)
 })
 
+
 router.post("/login", (req, res) => {
-    //console.log(req)
     
     let result = users.find((user) => user.email == req.body.email);
     if (result) {
       if (result.password == req.body.password) {
         res.status(200).send({
-          message: "Logged In Successful"
+          message: "Logged In Successfully"
         })
-      } else {
-        res.status(200).send({
+      }else{
+        res.status(201).send({
           message: "Password Incorrect",
         });
       }
     }else{
-        res.status(200).send({
+        res.status(202).send({
             message: "User Not Found"
         })
     }

@@ -62,7 +62,14 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 {/* Block Ends */}
-                
+                <div class="dflex flex-wrap">
+                    <div class="card" style={{width: "16vw", height:"10 vh", margin:"2rem"}}>
+                    <div class="card-body">     
+                        <h4 class="card-title">Count</h4>
+                    </div>
+                    </div>
+                </div>
+
 
                 </div>
                 

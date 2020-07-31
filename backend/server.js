@@ -8,16 +8,19 @@ const path = require("path");
 const UserRouter = require("./routes/userEvent");
 const userlogin = require('./routes/userlogin')
 const UserEvent = mongoose.model("details")
+const userRegister = require('./routes/userRegister')
+const createEvents = require('./routes/createEvents')
 
-
+app.use(express.json())
 app.use(
   bodyparser.urlencoded({
     extended: true,
   })
 );
 
-app.use("/User", UserRouter);
+app.use("/Admin", createEvents)
 
+app.use("/User", UserRouter);
 
 app.use((req, res, next)=>{
     res.header("Access-Control-Allow-Origin","*")
@@ -25,6 +28,8 @@ app.use((req, res, next)=>{
     res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS")
     next();
 })
+app.use("/", userRegister)
+
 
 app.use("/", userlogin)
 

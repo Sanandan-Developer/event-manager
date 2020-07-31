@@ -40,13 +40,5 @@ export default {
             details:"",
             link:"",
         },
-        {
-            _id:"1",
-            title:"Sixth",
-            description:"",
-            date: "",
-            details:"",
-            link:"",
-        },
     ]
 }

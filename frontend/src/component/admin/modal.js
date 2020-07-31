@@ -30,7 +30,7 @@ Modal.setAppElement('#root')
 export default function ModalContent(){
     const [modalIsOpen, setModalIsOpen] = React.useState(false)
     return (
-        <div>
+        <form type="submit">
             <button onClick={()=> setModalIsOpen(true)} type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" style={{float:"right"}}>
                 <i class="fas fa-pen"></i>
             </button>
@@ -38,21 +38,21 @@ export default function ModalContent(){
             <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Event Name</label>
-                <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                <input type="name" class="form-control" id="name" aria-describedby="emailHelp"/>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                <input type="Email" class="form-control" id="email" aria-describedby="emailHelp"/>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="description" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary m-2">Save Changes</button>
             <button type="button" class="btn btn-dark m-2" onClick={()=> setModalIsOpen(false)}>Close</button>
             </form>
             </Modal>
-        </div>
+        </form>
     );
 }
