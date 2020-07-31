@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "5f24372bdee5ba8c9d54fb55"
+  },
+  "name": "Chetan",
+  "email": "chetanpandey1266@gmail.com",
+  "password1": "password",
+  "password2": "password",
+  "userType": "Admin",
+  "phNum": "564573478",
+  "__v": 0
+}]
