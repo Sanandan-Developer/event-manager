@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const express = require('express')
-
+  
 const router = express.Router()
 const userslogin = mongoose.model("register")
 
@@ -9,15 +9,16 @@ router.post("/login", (req, res) => {
     
     userslogin.find((err, data)=>{
       let result = data.find((user) => user.email === req.body.email)
-      console.log(result)
+      //console.log(result)
       if (result) {
         if (result.password1 == req.body.password) {
           res.status(200).send({
-            message: "Logged In Successfully"
+            message: "Logged In Successfully",
+            id: result._id
           })
         }else{
           res.status(201).send({
-            message: "Password Incorrect",
+            message: "Password Incorrect"
           });
         }
       }else{

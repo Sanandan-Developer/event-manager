@@ -6,15 +6,22 @@ const UserRegister = mongoose.model("register")
 
 router.post("/register", (req, res)=>{
     console.log("You are in backend", req.body)
-
-    const userRegister = new UserRegister(req.body)
-
-    userRegister.save((err)=>{
-        if(err){
-            //console.log(err)
-            console.log(err)
-        }
+    
+    res.status(200).send({
+        message:`${req.body.name} you are registered`,
+        name: req.body.name
     })
+
+
+
+    // const userRegister = new UserRegister(req.body)
+
+    // userRegister.save((err)=>{
+    //     if(err){
+    //         //console.log(err)
+    //         console.log(err)
+    //     }
+    // })
 
 })
 

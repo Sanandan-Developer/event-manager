@@ -16,7 +16,7 @@ const routing = (
       <Route path="/login" component= {LogIn} />
       <Route path="/register" component= {Register} />
       <Route path="/Admin" component={Admin} />
-      <Route path="/User" component={User1}/>
+      <Route path="/User/:_id" component={User1}/>
     </div>
   </Router>
 )

@@ -8,11 +8,11 @@ const querystring = require('querystring')
 
 function Register2(props){
         
-        const history = useHistory()
+        const history = useHistory({props})
 
         function register(){
-            console.log(props,"Inside func")
-            var request = {
+            //console.log(props,"Inside func")
+            let request = {
                 name: props.data.name,
                 email: props.data.email,
                 password1: props.data.password1,
@@ -21,11 +21,13 @@ function Register2(props){
                 phNum: document.getElementById('phNum').value
 
             }
-            
+            console.log("Andar hain")
             axios.post("/register", querystring.stringify(request))
             .then(resp=>{
-                alert( "No Error")
-                history.push("/Admin")
+                alert(resp.data.message)
+                if(resp.status === 200){
+                    history.push(`/Admin/${resp.data.name}`)
+                }
             })
             .catch(err=>{
                  console.log(err, "Oh! Error")

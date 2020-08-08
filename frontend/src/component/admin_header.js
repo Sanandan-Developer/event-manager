@@ -23,7 +23,7 @@ class AdminHeader extends Component {
             <div className="navbar navbar-lg navbar-dark bg-dark">
                 <div>
                 <button className="sidebar-open-btn" onClick={this.props.open}><i className="fa fa-bars" aria-hidden="true"></i></button>
-                <Link to="/"><a className="navbar-brand" href="#">
+                <Link ><a className="navbar-brand" href="#">
                     <div className="left_area">
                         <h3>Event <span>Organiser</span></h3>
                     </div>

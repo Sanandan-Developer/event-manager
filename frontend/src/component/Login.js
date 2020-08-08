@@ -20,9 +20,9 @@ function LogIn(){
             }
             axios.post('http://localhost:3000/login', querystring.stringify(request))
             .then(resp =>{
-                console.log(resp)
+                console.log(resp, resp._id)
                 if(resp.status === 200){
-                    history.push("/User")
+                    history.push(`/User/${resp.data.id}`)
                 }
                 //console.log(resp)
                 alert(resp.data.message)
@@ -62,7 +62,6 @@ function LogIn(){
 }
 
 
-
-
  
 export default LogIn;
+

@@ -52,6 +52,11 @@ var UserRegister = new mongoose.Schema({
         type:String,
         required:true
     },
+    userType:{
+        type:String,
+        required:true,
+        enum:['Admin', 'User']
+    },
     password1:{
         type:String,
         required:true
@@ -59,11 +64,6 @@ var UserRegister = new mongoose.Schema({
     password2:{
         type:String,
         required:true
-    },
-    userType:{
-        type:String,
-        required:true,
-        enum:['Admin', 'User']
     },
     phNum:{
         type:String,
